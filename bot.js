@@ -2976,6 +2976,19 @@ client.on("guildMemberAdd", member => {
       });
 
 
+const CodingXActivity = [
+  "!help", //IT's Broken Here
+  "!help",
+  ];
+  
+client.on('ready', () => {
+  setInterval(() => {
+      const index = Math.floor(Math.random() * (CodingXActivity.length - 1) + 1);
+ client.user.setGame(CodingXActivity[index], "https://www.twitch.tv/CodingXArea");
+  }, 10000); //10 seconds
+});
+
+
 
 
 //MHSTR END NOW THIS IS END
