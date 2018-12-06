@@ -2805,7 +2805,7 @@ client.on('guildMemberAdd', member => {
     const ei = invites[member.guild.id];
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
     const inviter = client.users.get(invite.inviter.id);
-    const stewart = member.guild.channels.find("name", "invite");
+    const stewart = member.guild.channels.find("name", "🍃-•『-invite-』-•");
      stewart.send(`<@${member.user.id}> invited by <@${inviter.id}>`);
     
   }); 
