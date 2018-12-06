@@ -2816,6 +2816,11 @@ client.on('guildMemberAdd', member => {
 
 
 
+client.on('guildMemberAdd', (member) => {
+member.addRole(member.guild.roles.find('name', '📌༺Members༻📌'));
+});
+
+
 
 
 //MHSTR END NOW THIS IS END
