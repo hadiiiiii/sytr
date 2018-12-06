@@ -2804,7 +2804,7 @@ client.on('guildMemberAdd', member => {
     const ei = invites[member.guild.id];
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
     const inviter = client.users.get(invite.inviter.id);
-    const stewart = member.guild.channels.find("name", "🍃-•『-invite-』-•");
+    const stewart = member.guild.channels.find("name", "invite");
      stewart.send(<@${member.user.id}> invited by <@${inviter.id}>);
     //stewart.send(<@${member.user.id}> joined using invite code https://discord.gg/RahPaB${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.);
   }); 
