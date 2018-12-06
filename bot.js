@@ -2786,6 +2786,20 @@ client.on('ready', () => {
 
 
 
+const invites = {};
+
+const wait = require('util').promisify(setTimeout);
+
+client.on('ready', () => {
+  wait(1000);
+
+  client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
+  });
+});
+
 client.on('guildMemberAdd', member => {
   member.guild.fetchInvites().then(guildInvites => {
     const ei = invites[member.guild.id];
@@ -2793,6 +2807,7 @@ client.on('guildMemberAdd', member => {
     const inviter = client.users.get(invite.inviter.id);
     const stewart = member.guild.channels.find("name", "invite");
      stewart.send(`<@${member.user.id}> invited by <@${inviter.id}>`);
+    
   }); 
 });
 
