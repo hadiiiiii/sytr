@@ -2822,6 +2822,22 @@ member.addRole(member.guild.roles.find('name', '📌༺Members༻📌'));
 
 
 
+const antispam = require("discord-anti-spam");//npm i discord-anti-spam
+
+antispam(client, {
+  warnBuffer: 7, //عدد الرسائل الي لو انكتبت في الوقت الي انت محدده يجيه تحذير
+  maxBuffer: 20, //عدد الرسائل الي لو كتبها في وقت محدد يجيه بان
+  interval: 2000, //وقت تحدده مثلا عند التحظير لو كتب 7 رسائل فذا الوقت يجيه تحذير
+  warningMessage: "Stop Spamming To Prevent Mute/Kick/Ban", //رساله التحذير
+  banMessage: "Read The Rules Next Time", //رساله البان
+  maxDuplicatesWarning: 5,//عدد الرسائل المكرره مشان يجيه تحذير
+  maxDuplicatesBan: 20, //عدد الرسائل المكرره مشان يجيه بان
+  deleteMessagesAfterBanForPastDays: 7 //عدد الرسائل الي يتم مسحها مثال : الرساله الي من 7 ايام تنمسح اما لو الراسله من 8 ايام ما تنمسح
+});
+
+
+
+
 
 //MHSTR END NOW THIS IS END
 client.login(process.env.BOT_TOKEN);
